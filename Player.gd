@@ -3,6 +3,7 @@ extends KinematicBody2D
 enum States {AIR = 1, FLOOR}
 var state = States.AIR
 var velocity = Vector2(0,0)
+var coins = 0
 const SPEED = 250
 const GRAVITY = 35
 const JUMPFORCE = -1200
@@ -12,7 +13,7 @@ const JUMPFORCE = -1200
 
 func _physics_process(delta):
 	
-	print(state)
+	print(coins)
 	
 	match state:
 		States.AIR:
@@ -50,6 +51,10 @@ func _physics_process(delta):
 				print("Jump")
 				velocity.y = JUMPFORCE
 				state = States.AIR
+			
+			if coins == 20:  #to win
+				get_tree().change_scene("res://Level1.tscn")
+				
 			move_and_fall()
 		
 	
@@ -60,5 +65,8 @@ func _physics_process(delta):
 func move_and_fall():
 	velocity.y = velocity.y + GRAVITY
 	velocity = move_and_slide(velocity, Vector2.UP)
+	
+func addCoin():
+	coins = coins + 1
 	
 	

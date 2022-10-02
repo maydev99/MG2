@@ -28,6 +28,7 @@ radius = 32.0
 height = 32.0
 
 [node name="Player" type="KinematicBody2D"]
+collision_mask = 26
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )

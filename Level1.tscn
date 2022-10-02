@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://ASSETS/controls/right.png" type="Texture" id=1]
 [ext_resource path="res://ASSETS/controls/jump_button.png" type="Texture" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://ASSETS/tiles/Retina/platformIndustrial_002.png" type="Texture" id=8]
 [ext_resource path="res://ASSETS/tiles/Retina/platformIndustrial_015.png" type="Texture" id=9]
 [ext_resource path="res://ASSETS/tiles/Retina/platformIndustrial_016.png" type="Texture" id=10]
+[ext_resource path="res://ASSETS/backgrounds/backgroundColorForest.png" type="Texture" id=11]
+[ext_resource path="res://coin.tscn" type="PackedScene" id=12]
 
 [sub_resource type="ConvexPolygonShape2D" id=3]
 points = PoolVector2Array( 140, 140, 0, 140, 0, 0, 140, 0 )
@@ -149,17 +151,11 @@ points = PoolVector2Array( 140, 60, 0, 140, 0, 0, 140, 0 )
 
 [node name="Level1" type="Node2D"]
 
-[node name="ColorRect" type="ColorRect" parent="."]
-margin_top = -720.0
-margin_right = 2664.0
-margin_bottom = 376.0
-color = Color( 0.101961, 0.0862745, 0.219608, 1 )
-
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 2 )
 cell_size = Vector2( 140, 140 )
 format = 1
-tile_data = PoolIntArray( -393217, -1610612736, 0, -458744, 3, 0, -458733, -1073741824, 0, -327681, -1610612736, 0, -393205, 1, 0, -393204, 5, 0, -393197, -1073741824, 0, -262145, -1610612736, 0, -327677, 4, 0, -327676, 0, 0, -327675, 0, 0, -327674, 5, 0, -327661, -1073741824, 0, -196609, -1610612736, 0, -262136, 3, 0, -262129, 4, 0, -262128, 0, 0, -262127, 5, 0, -262125, -1073741824, 0, -131073, -1610612736, 0, -196589, -1073741824, 0, -65537, -1610612736, 0, -131064, 4, 0, -131063, 0, 0, -131062, 5, 0, -131053, -1073741824, 0, -131035, 4, 0, -1, -1610612736, 0, -65517, -1073741824, 0, 65535, -1610612736, 0, 5, 4, 0, 6, 0, 0, 7, 5, 0, 19, -1073741824, 0, 131071, -1610612736, 0, 65555, -1073741824, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 131083, 0, 0, 131084, 0, 0, 131085, 0, 0, 131086, 0, 0, 131087, 0, 0, 131088, 0, 0, 131089, 0, 0, 131090, 0, 0 )
+tile_data = PoolIntArray( -589795, -1073741824, 0, -524272, 1, 0, -524271, 5, 0, -524269, 3, 0, -524268, 3, 0, -524259, -1073741824, 0, -393217, -1610612736, 0, -458744, 3, 0, -458723, -1073741824, 0, -327681, -1610612736, 0, -393205, 1, 0, -393204, 5, 0, -393197, 4, 0, -393196, 0, 0, -393195, 0, 0, -393194, 0, 0, -393193, 5, 0, -393187, -1073741824, 0, -262145, -1610612736, 0, -327677, 4, 0, -327676, 0, 0, -327675, 0, 0, -327674, 5, 0, -327651, -1073741824, 0, -196609, -1610612736, 0, -262136, 3, 0, -262129, 4, 0, -262128, 0, 0, -262127, 5, 0, -262115, -1073741824, 0, -131073, -1610612736, 0, -196579, -1073741824, 0, -65537, -1610612736, 0, -131064, 4, 0, -131063, 0, 0, -131062, 5, 0, -131050, 1, 0, -131043, -1073741824, 0, -131035, 4, 0, -1, -1610612736, 0, -65524, 4, 0, -65523, 5, 0, -65508, 1, 0, -65507, -1073741824, 0, 65535, -1610612736, 0, 5, 4, 0, 6, 0, 0, 7, 5, 0, 15, 1, 0, 19, 3, 0, 27, 1, 0, 28, 1, 0, 29, -1073741824, 0, 131071, -1610612736, 0, 65562, 1, 0, 65563, 1, 0, 65564, 1, 0, 65565, -1073741824, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 131083, 0, 0, 131084, 0, 0, 131085, 0, 0, 131086, 0, 0, 131087, 0, 0, 131088, 0, 0, 131089, 0, 0, 131090, 0, 0, 131091, 0, 0, 131092, 0, 0, 131093, 0, 0, 131094, 0, 0, 131095, 0, 0, 131096, 0, 0, 131097, 0, 0, 131098, 0, 0, 131099, 0, 0, 131100, 0, 0, 131101, -1073741824, 0 )
 
 [node name="Controls" type="Node2D" parent="."]
 
@@ -191,8 +187,90 @@ passby_press = true
 action = "ui_jump"
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 424, 192 )
+position = Vector2( 414, 144 )
 script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
+limit_left = 0
+limit_top = -1250
+limit_right = 4050
+limit_bottom = 500
+limit_smoothed = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Bg1" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.7, 0.7 )
+motion_mirroring = Vector2( 2048, 2048 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Bg1"]
+position = Vector2( 0, -1296 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="Coins" type="Node2D" parent="."]
+
+[node name="coin" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 882, -54 )
+
+[node name="coin2" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 1015, -54 )
+
+[node name="coin3" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 2862, -1170 )
+
+[node name="coin4" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 2304, -1170 )
+
+[node name="coin5" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 2268, -612 )
+
+[node name="coin6" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 1818, -198 )
+
+[node name="coin7" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 1620, -900 )
+
+[node name="coin8" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 1458, -342 )
+
+[node name="coin9" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 1195, -1044 )
+
+[node name="coin10" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 666, -756 )
+
+[node name="coin11" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 522, -756 )
+
+[node name="coin12" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 1170, -612 )
+
+[node name="coin13" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 1195, -341 )
+
+[node name="coin14" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 3222, -900 )
+
+[node name="coin15" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 1785, -899 )
+
+[node name="coin16" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 2178, -71 )
+
+[node name="coin17" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 2736, -72 )
+
+[node name="coin18" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 3834, -72 )
+
+[node name="coin19" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 3042, -900 )
+
+[node name="coin20" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 2826, -900 )
