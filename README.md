@@ -1,2 +1,2 @@
 # MG2
- Platformer Game designed for mobile
+ Platformer Game designed for mobile using Godot
