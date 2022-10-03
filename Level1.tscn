@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://ASSETS/controls/right.png" type="Texture" id=1]
 [ext_resource path="res://ASSETS/controls/jump_button.png" type="Texture" id=2]
@@ -12,6 +12,9 @@
 [ext_resource path="res://ASSETS/tiles/Retina/platformIndustrial_016.png" type="Texture" id=10]
 [ext_resource path="res://ASSETS/backgrounds/backgroundColorForest.png" type="Texture" id=11]
 [ext_resource path="res://coin.tscn" type="PackedScene" id=12]
+[ext_resource path="res://ASSETS/coin/gold_1.png" type="Texture" id=13]
+[ext_resource path="res://ASSETS/fonts/Sulphur_Point/SulphurPoint-Bold.ttf" type="DynamicFontData" id=14]
+[ext_resource path="res://HUD.gd" type="Script" id=15]
 
 [sub_resource type="ConvexPolygonShape2D" id=3]
 points = PoolVector2Array( 140, 140, 0, 140, 0, 0, 140, 0 )
@@ -149,6 +152,20 @@ points = PoolVector2Array( 140, 60, 0, 140, 0, 0, 140, 0 )
 } ]
 5/z_index = 0
 
+[sub_resource type="StyleBoxFlat" id=8]
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="DynamicFont" id=9]
+size = 24
+font_data = ExtResource( 14 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 23
+font_data = ExtResource( 14 )
+
 [node name="Level1" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -219,58 +236,114 @@ centered = false
 position = Vector2( 882, -54 )
 
 [node name="coin2" parent="Coins" instance=ExtResource( 12 )]
-position = Vector2( 1015, -54 )
+position = Vector2( 1746, -197 )
 
 [node name="coin3" parent="Coins" instance=ExtResource( 12 )]
-position = Vector2( 2862, -1170 )
+position = Vector2( 594, 216 )
 
 [node name="coin4" parent="Coins" instance=ExtResource( 12 )]
-position = Vector2( 2304, -1170 )
+position = Vector2( 2412, -612 )
 
 [node name="coin5" parent="Coins" instance=ExtResource( 12 )]
-position = Vector2( 2268, -612 )
+position = Vector2( 1386, -341 )
 
 [node name="coin6" parent="Coins" instance=ExtResource( 12 )]
-position = Vector2( 1818, -198 )
+position = Vector2( 1836, -198 )
 
 [node name="coin7" parent="Coins" instance=ExtResource( 12 )]
-position = Vector2( 1620, -900 )
+position = Vector2( 3186, -900 )
 
 [node name="coin8" parent="Coins" instance=ExtResource( 12 )]
-position = Vector2( 1458, -342 )
+position = Vector2( 3060, -899 )
 
 [node name="coin9" parent="Coins" instance=ExtResource( 12 )]
-position = Vector2( 1195, -1044 )
+position = Vector2( 2304, -611 )
 
 [node name="coin10" parent="Coins" instance=ExtResource( 12 )]
-position = Vector2( 666, -756 )
+position = Vector2( 1620, -900 )
 
 [node name="coin11" parent="Coins" instance=ExtResource( 12 )]
-position = Vector2( 522, -756 )
+position = Vector2( 1188, -612 )
 
 [node name="coin12" parent="Coins" instance=ExtResource( 12 )]
-position = Vector2( 1170, -612 )
+position = Vector2( 1260, -342 )
 
 [node name="coin13" parent="Coins" instance=ExtResource( 12 )]
-position = Vector2( 1195, -341 )
+position = Vector2( 2160, -71 )
 
 [node name="coin14" parent="Coins" instance=ExtResource( 12 )]
-position = Vector2( 3222, -900 )
+position = Vector2( 2736, -70 )
 
 [node name="coin15" parent="Coins" instance=ExtResource( 12 )]
-position = Vector2( 1785, -899 )
+position = Vector2( 3816, -72 )
 
 [node name="coin16" parent="Coins" instance=ExtResource( 12 )]
-position = Vector2( 2178, -71 )
+position = Vector2( 2736, -1188 )
 
 [node name="coin17" parent="Coins" instance=ExtResource( 12 )]
-position = Vector2( 2736, -72 )
+position = Vector2( 1188, -1044 )
 
 [node name="coin18" parent="Coins" instance=ExtResource( 12 )]
-position = Vector2( 3834, -72 )
+position = Vector2( 702, -755 )
 
 [node name="coin19" parent="Coins" instance=ExtResource( 12 )]
-position = Vector2( 3042, -900 )
+position = Vector2( 594, -756 )
 
 [node name="coin20" parent="Coins" instance=ExtResource( 12 )]
-position = Vector2( 2826, -900 )
+position = Vector2( 1008, -53 )
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource( 15 )
+
+[node name="Panel" type="Panel" parent="HUD"]
+modulate = Color( 0, 0, 0, 0.458824 )
+margin_left = 25.0
+margin_top = 11.0
+margin_right = 191.0
+margin_bottom = 65.0
+custom_styles/panel = SubResource( 8 )
+
+[node name="coin_image" type="TextureRect" parent="HUD"]
+margin_left = 45.0
+margin_top = 25.0
+margin_right = 69.0
+margin_bottom = 50.0
+texture = ExtResource( 13 )
+expand = true
+
+[node name="x" type="Label" parent="HUD"]
+margin_left = 78.0
+margin_top = 24.0
+margin_right = 97.0
+margin_bottom = 49.0
+custom_fonts/font = SubResource( 9 )
+text = "x"
+
+[node name="Coins" type="Label" parent="HUD"]
+margin_left = 99.0
+margin_top = 25.0
+margin_right = 153.0
+margin_bottom = 49.0
+custom_fonts/font = SubResource( 10 )
+text = "###"
+
+[connection signal="coin_collected" from="Coins/coin" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/coin2" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/coin3" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/coin4" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/coin5" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/coin6" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/coin7" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/coin8" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/coin9" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/coin10" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/coin11" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/coin12" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/coin13" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/coin14" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/coin15" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/coin16" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/coin17" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/coin18" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/coin19" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/coin20" to="HUD" method="_on_coin_collected"]

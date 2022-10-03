@@ -49,6 +49,7 @@ func _physics_process(delta):
 				
 			if Input.is_action_just_pressed("ui_jump"):
 				print("Jump")
+				$AudioStreamPlayer2D.play()
 				velocity.y = JUMPFORCE
 				state = States.AIR
 			
@@ -67,6 +68,6 @@ func move_and_fall():
 	velocity = move_and_slide(velocity, Vector2.UP)
 	
 func addCoin():
-	coins = coins + 1
+	pass
 	
 	
