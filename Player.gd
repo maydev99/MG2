@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 enum States {AIR = 1, FLOOR}
+export var nextLevel = "res://Level2.tscn"
 var state = States.AIR
 var velocity = Vector2(0,0)
 var coins = 0
@@ -13,7 +14,6 @@ const JUMPFORCE = -1200
 
 func _physics_process(delta):
 	
-	print(coins)
 	
 	match state:
 		States.AIR:
@@ -67,7 +67,15 @@ func move_and_fall():
 	velocity.y = velocity.y + GRAVITY
 	velocity = move_and_slide(velocity, Vector2.UP)
 	
-func addCoin():
-	pass
 	
 	
+
+
+func _on_door_body_entered(body):
+	$DoorSound.play()
+	$DoorTimer.start()
+	$AnimationPlayer.play("fade")
+
+
+func _on_DoorTimer_timeout():
+	get_tree().change_scene(nextLevel)
