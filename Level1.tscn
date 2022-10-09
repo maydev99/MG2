@@ -1,7 +1,7 @@
 [gd_scene load_steps=25 format=2]
 
-[ext_resource path="res://ASSETS/controls/right.png" type="Texture" id=1]
-[ext_resource path="res://ASSETS/controls/jump_button.png" type="Texture" id=2]
+[ext_resource path="res://ASSETS/controls/arrow2.png" type="Texture" id=1]
+[ext_resource path="res://ASSETS/controls/jump2.png" type="Texture" id=2]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://ASSETS/tiles/Retina/platformIndustrial_003.png" type="Texture" id=5]
 [ext_resource path="res://ASSETS/tiles/Retina/platformIndustrial_001.png" type="Texture" id=6]
@@ -215,16 +215,16 @@ text = "###"
 
 [node name="left" type="TouchScreenButton" parent="Controls/direction"]
 modulate = Color( 1, 1, 1, 0.580392 )
-position = Vector2( 96, 352 )
+position = Vector2( 122, 355 )
 rotation = -3.14159
-scale = Vector2( 0.640071, 0.658529 )
+scale = Vector2( 0.682823, 0.611026 )
 normal = ExtResource( 1 )
 action = "ui_left"
 
 [node name="right" type="TouchScreenButton" parent="Controls/direction"]
 modulate = Color( 1, 1, 1, 0.580392 )
-position = Vector2( 120, 264 )
-scale = Vector2( 0.625, 0.6875 )
+position = Vector2( 126, 270 )
+scale = Vector2( 0.6875, 0.625 )
 normal = ExtResource( 1 )
 action = "ui_right"
 
@@ -232,7 +232,7 @@ action = "ui_right"
 
 [node name="jump" type="TouchScreenButton" parent="Controls/jump_layer"]
 modulate = Color( 1, 1, 1, 0.580392 )
-position = Vector2( 648, 247 )
+position = Vector2( 648, 248 )
 scale = Vector2( 0.843749, 0.820312 )
 normal = ExtResource( 2 )
 passby_press = true
@@ -327,7 +327,7 @@ position = Vector2( 594, -756 )
 position = Vector2( 1008, -53 )
 
 [node name="door" parent="." instance=ExtResource( 16 )]
-position = Vector2( 2329, -1188 )
+position = Vector2( 2299, -1180 )
 
 [connection signal="coin_collected" from="Coins/coin" to="HUD" method="_on_coin_collected"]
 [connection signal="coin_collected" from="Coins/coin2" to="HUD" method="_on_coin_collected"]

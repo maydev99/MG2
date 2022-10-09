@@ -48,7 +48,6 @@ func _physics_process(delta):
 				velocity.x = lerp(velocity.x, 0, 0.2)
 				
 			if Input.is_action_just_pressed("ui_jump"):
-				print("Jump")
 				$AudioStreamPlayer2D.play()
 				velocity.y = JUMPFORCE
 				state = States.AIR
@@ -64,17 +63,20 @@ func _physics_process(delta):
 
 
 func move_and_fall():
+	var snap = Vector2.DOWN * 32 if state == States.FLOOR else Vector2.ZERO
 	velocity.y = velocity.y + GRAVITY
-	velocity = move_and_slide(velocity, Vector2.UP)
+	velocity = move_and_slide_with_snap(velocity, snap, Vector2.UP)
 	
 	
 	
 
 
 func _on_door_body_entered(body):
-	$DoorSound.play()
-	$DoorTimer.start()
 	$AnimationPlayer.play("fade")
+	$DoorTimer.start()
+	velocity.x = 0
+	velocity.y = 0
+	
 
 
 func _on_DoorTimer_timeout():

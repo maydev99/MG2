@@ -12,7 +12,12 @@ config_version=4
 
 config/name="MG2"
 run/main_scene="res://Level1.tscn"
+boot_splash/image="res://ASSETS/backgrounds/ilocode.png"
 config/icon="res://icon.png"
+
+[autoload]
+
+Global="*res://Global.gd"
 
 [display]
 

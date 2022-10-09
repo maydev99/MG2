@@ -2,8 +2,8 @@
 
 [ext_resource path="res://HUD.gd" type="Script" id=1]
 [ext_resource path="res://ASSETS/tiles/desert_tiles/1.png" type="Texture" id=2]
-[ext_resource path="res://ASSETS/controls/right.png" type="Texture" id=3]
-[ext_resource path="res://ASSETS/controls/jump_button.png" type="Texture" id=4]
+[ext_resource path="res://ASSETS/controls/arrow2.png" type="Texture" id=3]
+[ext_resource path="res://ASSETS/controls/jump2.png" type="Texture" id=4]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://ASSETS/coin/gold_1.png" type="Texture" id=6]
 [ext_resource path="res://ASSETS/fonts/Sulphur_Point/SulphurPoint-Bold.ttf" type="DynamicFontData" id=7]
@@ -717,35 +717,6 @@ margin_bottom = 49.0
 custom_fonts/font = SubResource( 3 )
 text = "###"
 
-[node name="Controls" type="Node2D" parent="."]
-
-[node name="direction" type="CanvasLayer" parent="Controls"]
-
-[node name="left" type="TouchScreenButton" parent="Controls/direction"]
-modulate = Color( 1, 1, 1, 0.580392 )
-position = Vector2( 96, 352 )
-rotation = -3.14159
-scale = Vector2( 0.640071, 0.658529 )
-normal = ExtResource( 3 )
-action = "ui_left"
-
-[node name="right" type="TouchScreenButton" parent="Controls/direction"]
-modulate = Color( 1, 1, 1, 0.580392 )
-position = Vector2( 120, 264 )
-scale = Vector2( 0.625, 0.6875 )
-normal = ExtResource( 3 )
-action = "ui_right"
-
-[node name="jump_layer" type="CanvasLayer" parent="Controls"]
-
-[node name="jump" type="TouchScreenButton" parent="Controls/jump_layer"]
-modulate = Color( 1, 1, 1, 0.580392 )
-position = Vector2( 648, 247 )
-scale = Vector2( 0.843749, 0.820312 )
-normal = ExtResource( 4 )
-passby_press = true
-action = "ui_jump"
-
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="Bg1" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -876,13 +847,14 @@ position = Vector2( 1424, -48 )
 
 [node name="door" parent="." instance=ExtResource( 18 )]
 position = Vector2( 3840, -1152 )
+nextLevel = "res://Level3.tscn"
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
-position = Vector2( 184, 247 )
+position = Vector2( 288, 232 )
 __meta__ = {
 "_edit_group_": true
 }
-nextLevel = "res://Level1.tscn"
+nextLevel = "res://Level3.tscn"
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
@@ -891,6 +863,35 @@ limit_top = -1250
 limit_right = 3900
 limit_bottom = 500
 limit_smoothed = true
+
+[node name="Controls" type="Node2D" parent="."]
+
+[node name="direction" type="CanvasLayer" parent="Controls"]
+
+[node name="left" type="TouchScreenButton" parent="Controls/direction"]
+modulate = Color( 1, 1, 1, 0.580392 )
+position = Vector2( 122, 355 )
+rotation = -3.14159
+scale = Vector2( 0.682823, 0.611026 )
+normal = ExtResource( 3 )
+action = "ui_left"
+
+[node name="right" type="TouchScreenButton" parent="Controls/direction"]
+modulate = Color( 1, 1, 1, 0.580392 )
+position = Vector2( 126, 270 )
+scale = Vector2( 0.6875, 0.625 )
+normal = ExtResource( 3 )
+action = "ui_right"
+
+[node name="jump_layer" type="CanvasLayer" parent="Controls"]
+
+[node name="jump" type="TouchScreenButton" parent="Controls/jump_layer"]
+modulate = Color( 1, 1, 1, 0.580392 )
+position = Vector2( 648, 248 )
+scale = Vector2( 0.843749, 0.820312 )
+normal = ExtResource( 4 )
+passby_press = true
+action = "ui_jump"
 
 [connection signal="coin_collected" from="Coins/coin" to="HUD" method="_on_coin_collected"]
 [connection signal="coin_collected" from="Coins/coin2" to="HUD" method="_on_coin_collected"]

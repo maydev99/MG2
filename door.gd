@@ -1,13 +1,15 @@
 extends Area2D
 
-#export var nextLevel = "res://Level2.tscn"
+export var nextLevel = "res://Level2.tscn"
+
+func _ready():
+	$AnimationPlayer.play("butterfly_float")
 
 
-#func _on_door_body_entered(body):
-#	$DoorSound.play()
-#	#body.AnimationPlayer.play("fade")
-#	$Timer.start()
+func _on_door_body_entered(body):
+	$AudioStreamPlayer2D.play()
+	$Timer.start()
 
-#func _on_Timer_timeout():
-#		get_tree().change_scene(nextLevel)
+func _on_Timer_timeout():
+		get_tree().change_scene(nextLevel)
 
