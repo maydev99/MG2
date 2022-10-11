@@ -1,9 +1,17 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=17 format=2]
+=======
+[gd_scene load_steps=26 format=2]
+>>>>>>> Stashed changes
 
 [ext_resource path="res://ASSETS/controls/right.png" type="Texture" id=1]
 [ext_resource path="res://ASSETS/controls/jump_button.png" type="Texture" id=2]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=3]
+<<<<<<< Updated upstream
 [ext_resource path="res://Player.gd" type="Script" id=4]
+=======
+[ext_resource path="res://daemon.tscn" type="PackedScene" id=4]
+>>>>>>> Stashed changes
 [ext_resource path="res://ASSETS/tiles/Retina/platformIndustrial_003.png" type="Texture" id=5]
 [ext_resource path="res://ASSETS/tiles/Retina/platformIndustrial_001.png" type="Texture" id=6]
 [ext_resource path="res://ASSETS/tiles/Retina/platformIndustrial_008.png" type="Texture" id=7]
@@ -196,3 +204,157 @@ script = ExtResource( 4 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
+<<<<<<< Updated upstream
+=======
+limit_left = 0
+limit_top = -1250
+limit_right = 4050
+limit_bottom = 500
+limit_smoothed = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Bg1" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.7, 0.7 )
+motion_mirroring = Vector2( 2048, 2048 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Bg1"]
+position = Vector2( 0, -1296 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="Coins" type="Node2D" parent="."]
+
+[node name="coin" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 882, -54 )
+
+[node name="coin2" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 1746, -197 )
+
+[node name="coin3" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 594, 216 )
+
+[node name="coin4" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 2412, -612 )
+
+[node name="coin5" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 1386, -341 )
+
+[node name="coin6" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 1836, -198 )
+
+[node name="coin7" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 3186, -900 )
+
+[node name="coin8" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 3060, -899 )
+
+[node name="coin9" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 2304, -611 )
+
+[node name="coin10" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 1620, -900 )
+
+[node name="coin11" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 1188, -612 )
+
+[node name="coin12" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 1260, -342 )
+
+[node name="coin13" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 2160, -71 )
+
+[node name="coin14" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 2736, -70 )
+
+[node name="coin15" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 3816, -72 )
+
+[node name="coin16" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 2736, -1188 )
+
+[node name="coin17" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 1188, -1044 )
+
+[node name="coin18" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 702, -755 )
+
+[node name="coin19" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 594, -756 )
+
+[node name="coin20" parent="Coins" instance=ExtResource( 12 )]
+position = Vector2( 1008, -53 )
+
+[node name="door" parent="." instance=ExtResource( 16 )]
+position = Vector2( 2299, -1180 )
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="daemon" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 1212, -621 )
+
+[node name="daemon2" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 1058, -69 )
+
+[node name="daemon3" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 3284, -921 )
+
+[node name="daemon4" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 2002, 217 )
+
+[node name="daemon5" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 3140, -342 )
+
+[node name="daemon6" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 1689, -891 )
+
+[node name="daemon7" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 1319, -330 )
+
+[node name="daemon8" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 1436, 224 )
+
+[node name="daemon9" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 2879, 221 )
+
+[node name="daemon10" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 2183, -84 )
+
+[node name="daemon11" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 2201, -638 )
+
+[node name="daemon12" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 698, -780 )
+
+[node name="daemon13" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 1185, -1058 )
+
+[node name="daemon14" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 2787, -916 )
+
+[node name="daemon15" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 2864, -1194 )
+
+[connection signal="coin_collected" from="Coins/coin" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/coin2" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/coin3" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/coin4" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/coin5" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/coin6" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/coin7" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/coin8" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/coin9" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/coin10" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/coin11" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/coin12" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/coin13" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/coin14" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/coin15" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/coin16" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/coin17" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/coin18" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/coin19" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/coin20" to="HUD" method="_on_coin_collected"]
+[connection signal="body_entered" from="door" to="Player" method="_on_door_body_entered"]
+>>>>>>> Stashed changes

@@ -1,6 +1,10 @@
 extends KinematicBody2D
 
 enum States {AIR = 1, FLOOR}
+<<<<<<< Updated upstream
+=======
+# export var nextLevel = "res://Level2.tscn"
+>>>>>>> Stashed changes
 var state = States.AIR
 var velocity = Vector2(0,0)
 const SPEED = 250
@@ -62,3 +66,11 @@ func move_and_fall():
 	velocity = move_and_slide(velocity, Vector2.UP)
 	
 	
+<<<<<<< Updated upstream
+=======
+
+
+func _on_DoorTimer_timeout():
+#	get_tree().change_scene(nextLevel)
+	pass
+>>>>>>> Stashed changes

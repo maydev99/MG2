@@ -28,6 +28,11 @@ radius = 32.0
 height = 32.0
 
 [node name="Player" type="KinematicBody2D"]
+<<<<<<< Updated upstream
+=======
+collision_mask = 74
+script = ExtResource( 6 )
+>>>>>>> Stashed changes
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
